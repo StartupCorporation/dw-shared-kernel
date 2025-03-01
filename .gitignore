@@ -1,0 +1,4 @@
+venv/
+__pycache__/
+shared_kernel.egg-info/
+dist/
