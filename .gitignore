@@ -1,4 +1,4 @@
 venv/
 __pycache__/
-shared_kernel.egg-info/
+dw_shared_kernel.egg-info/
 dist/

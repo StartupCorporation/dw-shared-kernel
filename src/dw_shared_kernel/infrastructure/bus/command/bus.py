@@ -27,7 +27,7 @@ class CommandBus:
     ) -> None:
         await self._middleware_chain(command)
 
-    async def add_middlewares(
+    def add_middlewares(
         self,
         middlewares: list[BusMiddleware],
     ) -> None:
