@@ -1,0 +1,44 @@
+name: Publish package to PyPI
+
+on:
+  push:
+    tags:
+      - 'v**'
+
+jobs:
+  build:
+    name: Build package 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+    - name: Install build dependencies 
+      run: python3 -m pip install build
+    - name: Build a package
+      run: python3 -m build
+    - name: Store the package
+      uses: actions/upload-artifact@v4
+      with:
+        name: builded-package
+        path: dist/
+
+  publish-to-pypi:
+    needs: [build]
+    name: Publish package to the PyPi registry
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/dw-shared-kernel/
+    permissions:
+      id-token: write
+    steps:
+    - name: Download all the dists
+      uses: actions/download-artifact@v4
+      with:
+        name: builded-package
+        path: dist/
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,7 +1,7 @@
 from typing import Any
 
-from infrastructure.bus.query.handler import QueryHandler
-from infrastructure.bus.query.message import Query
+from dw_shared_kernel.infrastructure.bus.query.handler import QueryHandler
+from dw_shared_kernel.infrastructure.bus.query.message import Query
 
 
 class QueryBus:

@@ -1,7 +1,7 @@
 from collections.abc import Iterable
 
-from infrastructure.di.container import Container
-from infrastructure.di.layer import Layer
+from dw_shared_kernel.infrastructure.di.container import Container
+from dw_shared_kernel.infrastructure.di.layer import Layer
 
 
 def get_di_container(

@@ -25,7 +25,7 @@ def _change_to_root_dir(*_):
 def compile_(
     context: Context,
     extra: str | None = None,
-    output_file: str = "requirements.local.txt",
+    output_file: str = "requirements/requirements.local.txt",
 ) -> None:
     """
     Compiles packages from the pyproject.toml file to the output file.
@@ -55,7 +55,7 @@ def compile_(
 )
 def install(
     context: Context,
-    file: str = "requirements.local.txt",
+    file: str = "requirements/requirements.local.txt",
 ) -> None:
     """
     Install packages from the provided requirements file.
