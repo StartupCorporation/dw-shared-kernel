@@ -1,3 +1,6 @@
+__all__ = ("DomainException",)
+
+
 class DomainException(Exception):
     def __init__(
         self,

@@ -1,3 +1,6 @@
+__all__ = ("ApplicationException",)
+
+
 class ApplicationException(Exception):
     def __init__(
         self,

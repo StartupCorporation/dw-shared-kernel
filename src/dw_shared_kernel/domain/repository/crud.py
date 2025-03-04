@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
 
 
-class CRUDRepository[ID, ENTITY](ABC):
+__all__ = ("CRUDRepository",)
 
+
+class CRUDRepository[ID, ENTITY](ABC):
     @abstractmethod
     async def get(self, id_: ID) -> ENTITY | None: ...
 

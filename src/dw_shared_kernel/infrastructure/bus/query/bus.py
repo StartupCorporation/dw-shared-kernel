@@ -1,7 +1,10 @@
 from typing import Any
 
 from dw_shared_kernel.infrastructure.bus.query.handler import QueryHandler
-from dw_shared_kernel.infrastructure.bus.query.message import Query
+from dw_shared_kernel.infrastructure.bus.query.query import Query
+
+
+__all__ = ("QueryBus",)
 
 
 class QueryBus:

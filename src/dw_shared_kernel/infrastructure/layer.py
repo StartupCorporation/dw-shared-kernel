@@ -4,7 +4,10 @@ from dw_shared_kernel.infrastructure.di.container import Container
 from dw_shared_kernel.infrastructure.di.layer import Layer
 
 
-class InfrastructureLayer(Layer):
+__all__ = ("SharedKernelInfrastructureLayer",)
+
+
+class SharedKernelInfrastructureLayer(Layer):
     def setup(
         self,
         container: Container,

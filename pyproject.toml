@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dw-shared-kernel"
-version = "0.1.1"
+version = "0.2.0"
 authors = [
   { name="Panchenko Kirill", email="pnchkirill@gmail.com" },
 ]
@@ -66,3 +66,12 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 docstring-code-format = false
+
+[bumpver]
+current_version = "0.2.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+
+[bumpver.file_patterns]
+"pyproject.toml" = [
+    'version = "{version}"$',
+]

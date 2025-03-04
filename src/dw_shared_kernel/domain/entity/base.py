@@ -3,6 +3,9 @@ from dataclasses import dataclass
 from typing import Any
 
 
+__all__ = ("Entity",)
+
+
 @dataclass(kw_only=True)
 class Entity[ID](ABC):
     id: ID

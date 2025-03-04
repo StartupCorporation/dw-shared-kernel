@@ -1,8 +1,11 @@
 from collections.abc import Callable, Awaitable
 
 from dw_shared_kernel.infrastructure.bus.command.handler import CommandHandler
-from dw_shared_kernel.infrastructure.bus.command.message import Command
+from dw_shared_kernel.infrastructure.bus.command.command import Command
 from dw_shared_kernel.infrastructure.bus.middleware.base import BusMiddleware
+
+
+__all__ = ("CommandBus",)
 
 
 class CommandBus:

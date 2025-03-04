@@ -1,8 +1,10 @@
 from typing import Any
 
 
-class Container:
+__all__ = ("Container",)
 
+
+class Container:
     def __init__(self):
         self._dependencies: dict[type, Any] = {}
 
