@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Callable, Awaitable
 
 from dw_shared_kernel.domain.event_bus.event import ModelEvent
+from dw_shared_kernel.infrastructure.bus.event.handler import EventHandler
 
 
 class ModelEventBus(ABC):
@@ -9,4 +9,4 @@ class ModelEventBus(ABC):
     async def publish(self, event: ModelEvent) -> None: ...
 
     @abstractmethod
-    def register(self, event: type[ModelEvent], subscriber: Callable[[ModelEvent], Awaitable[None]]) -> None: ...
+    def register[EVENT: ModelEvent](self, event: type[EVENT], handler: EventHandler[EVENT]) -> None: ...

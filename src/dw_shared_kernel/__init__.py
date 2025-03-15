@@ -15,6 +15,7 @@ from dw_shared_kernel.domain.mixin.change_tracker import ValueCreatedChange
 from dw_shared_kernel.infrastructure.di.layer import Layer
 from dw_shared_kernel.infrastructure.di.container import Container
 from dw_shared_kernel.infrastructure.di.utils import get_di_container
+from dw_shared_kernel.infrastructure.bus.event.bus import EventBus
 from dw_shared_kernel.infrastructure.bus.command.bus import CommandBus
 from dw_shared_kernel.infrastructure.bus.command.handler import CommandHandler
 from dw_shared_kernel.infrastructure.bus.command.command import Command
@@ -28,6 +29,7 @@ from dw_shared_kernel.infrastructure.message_broker.destination import MessageDe
 from dw_shared_kernel.infrastructure.message_broker.publisher import MessageBrokerPublisher
 from dw_shared_kernel.infrastructure.layer import SharedKernelInfrastructureLayer
 from dw_shared_kernel.utils.value_name_enum import ValueNameEnum
+
 
 __all__ = (
     "ApplicationException",
@@ -48,6 +50,7 @@ __all__ = (
     "Container",
     "get_di_container",
     "BusMiddleware",
+    "EventBus",
     "CommandBus",
     "CommandHandler",
     "Command",

@@ -1,12 +1,10 @@
-from collections import defaultdict
-
 from dw_shared_kernel.domain.event_bus.event import IntegrationEvent
 from dw_shared_kernel.infrastructure.message_broker.destination import MessageDestination
 
 
 class IntegrationEventRepository:
     def __init__(self):
-        self._mapper: dict[type[IntegrationEvent], list[MessageDestination]] = defaultdict(list)
+        self._mapper: dict[type[IntegrationEvent], MessageDestination] = {}
         self._events = []
 
     def add_event_destination(
@@ -14,7 +12,7 @@ class IntegrationEventRepository:
         event: type[IntegrationEvent],
         destination: MessageDestination,
     ) -> None:
-        self._mapper[event].append(destination)
+        self._mapper[event] = destination
 
     def add_event(
         self,
@@ -30,8 +28,8 @@ class IntegrationEventRepository:
     ) -> IntegrationEvent | None:
         return next(filter(lambda e: e.__event_name__ == name, self._events), None)
 
-    def get_event_destinations(
+    def get_event_destination(
         self,
         event: type[IntegrationEvent],
-    ) -> list[MessageDestination]:
-        return self._mapper[event]
+    ) -> MessageDestination | None:
+        return self._mapper.get(event)

@@ -19,8 +19,13 @@ class IntegrationEvent(ABC):
     __event_id__: UUID = field(default_factory=uuid4)
     __event_created_at__: datetime = field(default_factory=datetime.now)
 
-    @abstractmethod
-    def serialize(self) -> dict: ...
+    def serialize(self) -> dict:
+        return {
+            "id": self.__event_id__,
+            "event_type": self.__event_name__,
+            "created_at": self.__event_created_at__,
+            "data": None,
+        }
 
     @classmethod
     @abstractmethod
