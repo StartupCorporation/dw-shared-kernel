@@ -29,6 +29,9 @@ from dw_shared_kernel.infrastructure.message_broker.destination import MessageDe
 from dw_shared_kernel.infrastructure.message_broker.publisher import MessageBrokerPublisher
 from dw_shared_kernel.infrastructure.layer import SharedKernelInfrastructureLayer
 from dw_shared_kernel.utils.value_name_enum import ValueNameEnum
+from dw_shared_kernel.domain.specification.base import Specification
+from dw_shared_kernel.domain.specification.not_empty_string import NotEmptyStringSpecification
+from dw_shared_kernel.domain.specification.string_length import StringLengthSpecification
 
 
 __all__ = (
@@ -63,4 +66,7 @@ __all__ = (
     "MessageBrokerPublisher",
     "SharedKernelInfrastructureLayer",
     "ValueNameEnum",
+    "Specification",
+    "NotEmptyStringSpecification",
+    "StringLengthSpecification",
 )
